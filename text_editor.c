@@ -215,10 +215,6 @@ WINDOW *create_newwin(int height, int width, int starty, int startx) {
 }
 
 void destroy_win(WINDOW *local_win) {
-  /* box(local_win, ' ', ' '); : This won't produce the desired
-   * result of erasing the window. It will leave it's four corners
-   * and so an ugly remnant of window.
-   */
   wclear(local_win);
   wborder(local_win, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
   /* The parameters taken are
