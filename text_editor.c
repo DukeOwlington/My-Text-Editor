@@ -148,7 +148,7 @@ void Info() {
   int wrow = 0, wcol = 0;
   wrow += 1;
   wcol += 7;
-  my_win = create_newwin(height, width, starty, --startx);
+  my_win = CreateNewwin(height, width, starty, --startx);
   mvwaddstr(my_win, ++wrow, wcol, "q - quit without writing");
   mvwaddstr(my_win, ++wrow, wcol, "w - write and quit");
   mvwaddstr(my_win, ++wrow, wcol, "d - delete line");
@@ -158,7 +158,7 @@ void Info() {
   mvwaddstr(my_win, ++wrow, wcol, "CTRL + L - redraw screen");
   wrefresh(my_win);
   getch();
-  destroy_win(my_win);
+  DestroyWin(my_win);
 }
 
 int HandleInputMode(int character) {
@@ -202,7 +202,7 @@ int HandleInputMode(int character) {
   return 0;
 }
 
-WINDOW *create_newwin(int height, int width, int starty, int startx) {
+WINDOW *СreateNewwin(int height, int width, int starty, int startx) {
   WINDOW *local_win;
 
   local_win = newwin(height, width, starty, startx);
@@ -214,7 +214,7 @@ WINDOW *create_newwin(int height, int width, int starty, int startx) {
   return local_win;
 }
 
-void destroy_win(WINDOW *local_win) {
+void DestroyWin(WINDOW *local_win) {
   wclear(local_win);
   wborder(local_win, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
   /* The parameters taken are
