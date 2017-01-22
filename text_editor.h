@@ -11,6 +11,6 @@ void InputMode(void);
 int HandleInputMode(int character);
 int HandleEditMode(int character);
 void Info(void);
-WINDOW *create_newwin(int height, int width, int starty, int startx);
-void destroy_win(WINDOW *local_win);
+WINDOW *CreateNewwin(int height, int width, int starty, int startx);
+void DestroyWin(WINDOW *local_win);
 #endif // TEXT_EDITOR_H_INCLUDED
